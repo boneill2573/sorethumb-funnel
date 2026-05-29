@@ -1,0 +1,14 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/mortgage-application", "destination": "/index.html" },
+    { "source": "/insurance-application", "destination": "/commercial-application.html" },
+    { "source": "/commercial-application", "destination": "/commercial-application.html" },
+    { "source": "/commercial-confirmed", "destination": "/commercial-confirmed.html" },
+    { "source": "/commercial-confirmed-priority", "destination": "/commercial-confirmed-priority.html" },
+    { "source": "/personal-application", "destination": "/personal-application.html" },
+    { "source": "/personal-confirmed", "destination": "/personal-confirmed.html" },
+    { "source": "/personal-confirmed-priority", "destination": "/personal-confirmed-priority.html" }
+  ]
+}
