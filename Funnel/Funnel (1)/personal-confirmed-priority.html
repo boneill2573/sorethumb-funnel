@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="facebook-domain-verification" content="o62zpxew1zwcxkfqk0qm06uhrvay4j" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>You're booked — Sore Thumb Agency</title>
+  <meta name="description" content="Your diagnostic call is confirmed. Here's what to do next." />
+  <meta name="robots" content="noindex" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="thank-you.css" />
+
+  <!-- ============ META PIXEL (DATASET 1532998407814474) ============
+       This page = a PERSONAL-LINES PRIORITY booking. Fires Schedule + Lead + custom PersonalBooking.
+       This is the page optimized against in Ads Manager for the personal-lines funnel.
+       (Commercial uses PriorityBooking; personal uses PersonalBooking — separate custom conversions.) -->
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1532998407814474');
+    fbq('track', 'PageView');
+
+    // Unique event ID is reused server-side via CAPI to deduplicate.
+    window.__metaEventId = 'personal_priority_' + Date.now() + '_' + Math.random().toString(36).slice(2);
+
+    fbq('track', 'Schedule',
+      { content_name: 'Personal Priority Booking', currency: 'USD', value: 1 },
+      { eventID: window.__metaEventId });
+
+    fbq('track', 'Lead',
+      { content_name: 'Personal Priority Booking', currency: 'USD', value: 1 },
+      { eventID: window.__metaEventId });
+
+    fbq('trackCustom', 'PersonalBooking',
+      { currency: 'USD', value: 1 },
+      { eventID: window.__metaEventId });
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1532998407814474&ev=PageView&noscript=1" alt="" /></noscript>
+  <!-- End Meta Pixel -->
+
+  <!-- GA4 — placeholder, left commented for future
+  <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_GA4_ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'YOUR_GA4_ID');
+    gtag('event', 'generate_lead', { currency: 'USD', value: 1, lead_quality: 'priority' });
+  </script>
+  -->
+</head>
+<body>
+  <div class="atmosphere"></div>
+  <div class="grain"></div>
+
+  <!-- Minimal top bar -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div style="display:flex;align-items:center;gap:14px">
+        <img src="assets/logo.png" alt="Sore Thumb Agency" class="topbar-logo" />
+      </div>
+      <div class="topbar-meta">
+        <span class="topbar-meta-dot"></span>
+        <span>BOOKING CONFIRMED</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ CONFIRMATION HERO ============ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head center">
+        <span class="eyebrow"><span class="dot"></span>BOOKING CONFIRMED · BUILT TO SCALE&trade;</span>
+        <h1 class="text-grad">You're booked.</h1>
+        <p class="lede">Before we jump on together, two quick things to make our time count.</p>
+      </div>
+
+      <div class="confirm-card">
+        <ol class="confirm-steps">
+          <li>
+            <div class="step-num">01</div>
+            <div class="step-body">
+              <h3>Accept the Calendly invite</h3>
+              <p>Check your email and accept the invitation from <strong>Calendly</strong>. This locks the time into your calendar — without acceptance, the slot can be released.</p>
+            </div>
+          </li>
+          <li>
+            <div class="step-num">02</div>
+            <div class="step-body">
+              <h3>Watch this 2-minute prep video</h3>
+              <p>It covers exactly what to expect on our call, what to have ready, and how to get the most out of our time together. Brian references this video on every call — watching now means we skip the basics and dive straight into your strategy.</p>
+            </div>
+          </li>
+          <li>
+            <div class="step-num">03</div>
+            <div class="step-body">
+              <h3>Save the SMS reminder</h3>
+              <p>We'll text you <strong>1 hour before</strong> the call from a US number. Reply <strong>CONFIRM</strong> when it lands so we know you're locked in. No-shows cost both of us — let's not let that happen.</p>
+            </div>
+          </li>
+        </ol>
+
+        <div class="video-frame">
+          <video
+            class="video-el is-playing"
+            controls
+            playsinline
+            preload="none"
+            poster="assets/video-thumbnail.png"
+            src="https://assets.cdn.filesafe.space/VeS7pDhDmkRYLbsp3wjM/media/6966829c9a690c161fedb9a9.mp4">
+          </video>
+        </div>
+
+        <div class="confirm-callout">
+          <span>&#9888;&#65039;</span>
+          <div><strong>Heads up:</strong> Brian references what's in this video during our calls. Watching it now means we can skip the basics and dive straight into getting you results.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PRE-CALL PREP CHECKLIST ============ -->
+  <section class="section section--tight">
+    <div class="container">
+      <div class="section-head center">
+        <span class="eyebrow"><span class="dot"></span>BEFORE OUR CALL</span>
+        <h2 class="text-grad">What to have ready.</h2>
+        <p class="lede">A few minutes of prep means we walk in with a plan, not a discovery. Have these handy on the call.</p>
+      </div>
+
+      <div class="confirm-card" style="padding-top: 36px; padding-bottom: 36px;">
+        <ul class="prep-list">
+          <li>
+            <span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+            <div><strong>Your last 90 days of lead-gen spend</strong> <span class="muted">— what you've spent across shared lead lists, aged-lead vendors, paid social, anything paid.</span></div>
+          </li>
+          <li>
+            <span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+            <div><strong>Lead-to-quote conversion rate</strong> <span class="muted">— roughly, what percentage of leads become quotes? An honest estimate is fine.</span></div>
+          </li>
+          <li>
+            <span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+            <div><strong>Top 3 agents' quote-to-bind rates</strong> <span class="muted">— ballpark. Helps us model the impact a clean pipeline would have on your top performers.</span></div>
+          </li>
+          <li>
+            <span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+            <div><strong>The single biggest bottleneck</strong> <span class="muted">— if you could fix one thing about your acquisition tomorrow, what would it be?</span></div>
+          </li>
+          <li>
+            <span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+            <div><strong>A quiet space with audio</strong> <span class="muted">— this is a working call, not a sales pitch. We'll be sharing screens and walking through real numbers.</span></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ VIDEOS ============ -->
+  <section class="section section--tight">
+    <div class="container">
+      <div class="section-head center">
+        <span class="eyebrow"><span class="dot"></span>QUICK FAQ VIDEOS</span>
+        <h2 class="text-grad">Common questions, answered.</h2>
+        <p class="lede">The most common things agencies ask before jumping on a call. 60 seconds each.</p>
+      </div>
+
+      <!-- TODO: replace each <a href="#"> with the FAQ video URL or wire to a modal/lightbox -->
+      <div class="faq-vid-grid">
+        <a class="faq-vid" href="#" data-video="https://assets.cdn.filesafe.space/VeS7pDhDmkRYLbsp3wjM/media/696680dce4b3055556239201.mp4" data-poster="assets/faq-first-7-days.png">
+          <div class="faq-vid-thumb has-thumb" style="background-image: url('assets/faq-first-7-days.png')">
+            <div class="play-btn">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+          </div>
+          <div class="faq-vid-body">
+            <div class="faq-vid-tag">01 · FAQ</div>
+            <h4>What happens in the first 7 days after I sign up?</h4>
+          </div>
+        </a>
+        <a class="faq-vid" href="#" data-video="https://assets.cdn.filesafe.space/VeS7pDhDmkRYLbsp3wjM/media/696680dcb9e85c6863f33992.mp4" data-poster="assets/faq-exclusive-leads.png">
+          <div class="faq-vid-thumb has-thumb" style="background-image: url('assets/faq-exclusive-leads.png')">
+            <div class="play-btn">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+          </div>
+          <div class="faq-vid-body">
+            <div class="faq-vid-tag">02 · FAQ</div>
+            <h4>How do you guarantee exclusive leads for my agency?</h4>
+          </div>
+        </a>
+        <a class="faq-vid" href="#" data-video="https://assets.cdn.filesafe.space/VeS7pDhDmkRYLbsp3wjM/media/696680dce4b30516652391fd.mp4" data-poster="assets/faq-how-long-results.png">
+          <div class="faq-vid-thumb has-thumb" style="background-image: url('assets/faq-how-long-results.png')">
+            <div class="play-btn">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+          </div>
+          <div class="faq-vid-body">
+            <div class="faq-vid-tag">03 · FAQ</div>
+            <h4>How long does it take to see results?</h4>
+          </div>
+        </a>
+        <a class="faq-vid" href="#" data-video="https://assets.cdn.filesafe.space/VeS7pDhDmkRYLbsp3wjM/media/696680dc9a690c642ded23fe.mp4" data-poster="assets/faq-qualified-leads.png">
+          <div class="faq-vid-thumb has-thumb" style="background-image: url('assets/faq-qualified-leads.png')">
+            <div class="play-btn">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+          </div>
+          <div class="faq-vid-body">
+            <div class="faq-vid-tag">04 · FAQ</div>
+            <h4>How do you ensure qualified leads?</h4>
+          </div>
+        </a>
+        <a class="faq-vid" href="#" data-video="https://assets.cdn.filesafe.space/VeS7pDhDmkRYLbsp3wjM/media/696680dc0beb54c9a8eaa951.mp4" data-poster="assets/faq-roi.png">
+          <div class="faq-vid-thumb has-thumb" style="background-image: url('assets/faq-roi.png')">
+            <div class="play-btn">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+          </div>
+          <div class="faq-vid-body">
+            <div class="faq-vid-tag">05 · FAQ</div>
+            <h4>What kind of return can I realistically expect?</h4>
+          </div>
+        </a>
+        <a class="faq-vid" href="#" data-video="https://assets.cdn.filesafe.space/VeS7pDhDmkRYLbsp3wjM/media/696680dc0475d495d64e9217.mp4" data-poster="assets/faq-support.png">
+          <div class="faq-vid-thumb has-thumb" style="background-image: url('assets/faq-support.png')">
+            <div class="play-btn">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+          </div>
+          <div class="faq-vid-body">
+            <div class="faq-vid-tag">06 · FAQ</div>
+            <h4>What kind of support and communication can I expect?</h4>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CASE STUDIES — FULL SET ============ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head center">
+        <span class="eyebrow"><span class="dot"></span>BUILT TO SCALE&trade; · IN ACTION</span>
+        <h2 class="text-grad">While you wait — here's what's possible.</h2>
+        <p class="lede">Real home & auto insurance agencies running the Built to Scale&trade; system right now. Not vanity numbers. Real receipts.</p>
+      </div>
+
+      <div class="case-grid">
+        <!-- Feature card -->
+        <div class="case-card case-card--feature">
+          <div class="case-label">DECEMBER · HOME & AUTO AGENCY</div>
+          <div class="case-num">146</div>
+          <div class="case-title">Exclusive home & auto leads in 30 days at <strong>$4.72</strong> per lead.</div>
+          <div class="case-meta">
+            <span><strong>+50.5%</strong> volume MoM</span>
+            <span><strong>&#8722;41.4%</strong> CPL</span>
+            <span><strong>$689.70</strong> total ad spend</span>
+          </div>
+        </div>
+
+        <div class="case-card">
+          <div class="case-label">3-MONTH OUTBOUND</div>
+          <div class="case-num">$1.14M</div>
+          <div class="case-title">New personal lines premium written without cold calling.</div>
+          <div class="case-meta">
+            <span>March &mdash; May</span>
+            <span>Outbound machine</span>
+          </div>
+        </div>
+
+        <div class="case-card">
+          <div class="case-label">KENNY · FIRST 57 DAYS</div>
+          <div class="case-num">$60K</div>
+          <div class="case-title">In commission added since plugging into Built to Scale&trade;.</div>
+          <div class="case-meta">
+            <span><strong>+87.5%</strong> lead volume</span>
+            <span><strong>&#8722;64.2%</strong> CPL</span>
+            <span><strong>$8.11</strong> CPL</span>
+          </div>
+        </div>
+
+        <div class="case-card">
+          <div class="case-label">ANDREW · FIRST ACCOUNT BOUND</div>
+          <div class="case-num">$13K</div>
+          <div class="case-title">Commission from <strong>$750</strong> in ad spend.</div>
+          <div class="case-meta">
+            <span>Strategy &mdash; Execution</span>
+            <span>Built to Scale&trade; system</span>
+          </div>
+        </div>
+
+        <div class="case-card">
+          <div class="case-label">THOMAS · FIRST 24 HOURS</div>
+          <div class="case-num">2 / 6</div>
+          <div class="case-title">Qualified appointments from 6 leads, in the first day.</div>
+          <div class="case-meta">
+            <span><strong>$5</strong> CPL</span>
+            <span>Day-one results</span>
+          </div>
+        </div>
+
+        <div class="case-card">
+          <div class="case-label">COMPOUNDING · MONTH-OVER-MONTH</div>
+          <div class="case-num">$9.06</div>
+          <div class="case-title">CPL — consistently improved every single month.</div>
+          <div class="case-meta">
+            <span><strong>+6.5%</strong> lead volume</span>
+            <span><strong>&#8722;6.6%</strong> CPL</span>
+            <span>Compounding system</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOUNDER MESSAGE ============ -->
+  <section class="section">
+    <div class="container">
+      <div class="founder-section">
+        <div class="founder-head">
+          <div class="small-eyebrow">A message from</div>
+          <h2 class="text-grad">Brian O'Neill</h2>
+          <div class="role">FOUNDER &middot; SORE THUMB AGENCY</div>
+        </div>
+        <div class="founder-body">
+          <p>As a trained architect, we learn that every structure needs three things: a solid foundation, integrated systems, and the ability to handle growth without collapse.</p>
+          <p>When the firm I worked for went bankrupt, I realized businesses need the same thing — most just build campaigns instead of infrastructure.</p>
+          <p>I had to pick up a full-time job in a donut shop in Central London just to make ends meet — and so it could also fuel my journey into entrepreneurship. That struggle forced me to figure it all out and stand out amongst the crowd.</p>
+          <p>Now I apply architectural principles to personal lines agency growth — engineering systems that scale predictably and sustainably. From then to today, we follow one value at Sore Thumb: <strong>Stand out like one.</strong></p>
+          <p>With this embodied into our whole team and culture, we spread this mindset into your agency. We demand more from ourselves each and every day, which will inevitably push your brand in the right direction. You'll feel and embrace this from day one — no matter how we're serving you.</p>
+          <p>So my message to you is simple: it's my duty to make you stand out like a Sore Thumb. It's what we do. I would be forever grateful for us to cross paths through this journey and hopefully form a bond within a partnership, no matter how big or small.</p>
+          <p>Hope to speak soon. Until then&hellip;</p>
+        </div>
+        <div class="founder-sig">
+          <strong>Brian O'Neill</strong> &middot; Founder, Sore Thumb Agency
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <img src="assets/logo.png" alt="Sore Thumb Agency" />
+    <div class="small">&copy; 2026 Sore Thumb Agency. All rights reserved.</div>
+    <div class="small">We install the infrastructure your agency should've had from day one.</div>
+  </footer>
+
+  <!-- ============ FAQ VIDEO MODAL ============ -->
+  <div class="vidmodal" id="vidmodal" aria-hidden="true" role="dialog" aria-label="FAQ video player">
+    <div class="vidmodal-backdrop" data-vm-close></div>
+    <div class="vidmodal-card">
+      <button class="vidmodal-close" type="button" data-vm-close aria-label="Close video">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+      <div class="vidmodal-title" id="vidmodal-title"></div>
+      <div class="vidmodal-frame">
+        <video id="vidmodal-video" controls playsinline preload="metadata"></video>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var modal = document.getElementById('vidmodal');
+      var video = document.getElementById('vidmodal-video');
+      var titleEl = document.getElementById('vidmodal-title');
+      if (!modal || !video) return;
+
+      function open(url, title, poster) {
+        if (!url) return;
+        video.src = url;
+        if (poster) video.poster = poster; else video.removeAttribute('poster');
+        titleEl.textContent = title || '';
+        modal.classList.add('is-open');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        // Defer play so the src has time to attach
+        requestAnimationFrame(function () {
+          var p = video.play();
+          if (p && typeof p.catch === 'function') p.catch(function(){});
+        });
+      }
+
+      function close() {
+        modal.classList.remove('is-open');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        try { video.pause(); } catch (e) {}
+        video.removeAttribute('src');
+        video.load();
+      }
+
+      // Wire FAQ cards
+      document.querySelectorAll('.faq-vid[data-video]').forEach(function (card) {
+        card.addEventListener('click', function (e) {
+          e.preventDefault();
+          var url = card.getAttribute('data-video');
+          var poster = card.getAttribute('data-poster') || '';
+          var titleNode = card.querySelector('h4');
+          var title = titleNode ? titleNode.textContent.trim() : '';
+          open(url, title, poster);
+        });
+      });
+
+      // Close handlers
+      modal.addEventListener('click', function (e) {
+        if (e.target.hasAttribute('data-vm-close') || e.target.closest('[data-vm-close]')) close();
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && modal.classList.contains('is-open')) close();
+      });
+    })();
+  </script>
+
+</body>
+</html>

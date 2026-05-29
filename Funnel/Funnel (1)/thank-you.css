@@ -1,0 +1,326 @@
+/* ============================================================
+   THANK-YOU PAGES — shared styles
+   Used by /mortgage-confirmed and /mortgage-confirmed-priority
+   ============================================================ */
+
+/* Confirmation card — the "do these two things" block */
+.confirm-card {
+  background: var(--bg-elev);
+  border: 1px solid var(--line);
+  border-radius: var(--r-xl);
+  padding: clamp(28px, 4vw, 56px);
+  max-width: 920px;
+  margin: 0 auto;
+  box-shadow: var(--shadow-card);
+}
+
+.confirm-steps {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 36px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.confirm-steps li {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 22px;
+  align-items: start;
+}
+.confirm-steps .step-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--brand-glow);
+  background: rgba(178, 20, 158, 0.12);
+  border: 1px solid var(--line-brand);
+  border-radius: 999px;
+  padding: 8px 14px;
+  align-self: start;
+  white-space: nowrap;
+}
+.confirm-steps .step-body h3 {
+  font-size: clamp(20px, 1.7vw, 24px);
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  letter-spacing: -0.01em;
+  color: var(--text);
+}
+.confirm-steps .step-body p {
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--text-mute);
+  margin: 0;
+}
+.confirm-steps .step-body strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* Warning callout — heads up about referencing the video */
+.confirm-callout {
+  margin-top: 28px;
+  padding: 18px 22px;
+  background: rgba(255, 200, 60, 0.06);
+  border: 1px solid rgba(255, 200, 60, 0.2);
+  border-radius: var(--r-md);
+  font-size: 15px;
+  color: var(--text);
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  line-height: 1.5;
+}
+.confirm-callout strong { color: #ffc83c; font-weight: 700; }
+
+/* Video frame — reuse existing .video-frame from styles.css but force playing styling */
+.confirm-card .video-frame {
+  margin-top: 24px;
+}
+
+/* Pre-call prep checklist (priority page only) */
+.prep-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.prep-list li {
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  gap: 14px;
+  align-items: start;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--text);
+}
+.prep-list li .check {
+  width: 22px;
+  height: 22px;
+  border-radius: 999px;
+  background: rgba(34, 197, 94, 0.15);
+  border: 1px solid rgba(34, 197, 94, 0.4);
+  color: #22c55e;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.prep-list li .check svg { width: 12px; height: 12px; }
+.prep-list li strong { font-weight: 600; }
+.prep-list li span.muted { color: var(--text-mute); }
+
+/* FAQ video grid (priority page only) */
+.faq-vid-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-top: 32px;
+}
+@media (max-width: 720px) {
+  .faq-vid-grid { grid-template-columns: 1fr; }
+}
+.faq-vid {
+  background: var(--bg-elev);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.faq-vid-thumb {
+  position: relative;
+  aspect-ratio: 16/9;
+  background:
+    radial-gradient(ellipse 60% 60% at 50% 50%, rgba(178,20,158,0.18), transparent 60%),
+    linear-gradient(135deg, var(--brand-deep), var(--bg-elev));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.faq-vid-thumb::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(0deg, transparent 0, transparent 3px, rgba(255,255,255,0.02) 3px, rgba(255,255,255,0.02) 4px);
+}
+.faq-vid-thumb .play-btn {
+  width: 56px; height: 56px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--brand-hi), var(--brand-glow));
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 12px 36px -6px rgba(178,20,158,0.7);
+  z-index: 2;
+}
+.faq-vid-thumb .play-btn svg { width: 22px; height: 22px; color: white; margin-left: 3px; }
+/* Real thumbnail image on a card */
+.faq-vid-thumb.has-thumb {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.faq-vid-thumb.has-thumb::before {
+  background-image: linear-gradient(0deg, rgba(8,4,12,0.35), rgba(8,4,12,0.05));
+}
+.faq-vid-thumb.has-thumb .play-btn {
+  box-shadow: 0 12px 36px -6px rgba(0,0,0,0.55), 0 0 0 4px rgba(255,255,255,0.12);
+}
+.faq-vid-body {
+  padding: 18px 22px 22px;
+}
+.faq-vid-body h4 {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 0 4px 0;
+  line-height: 1.3;
+  letter-spacing: -0.005em;
+}
+.faq-vid-body .faq-vid-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: var(--text-mute);
+  text-transform: uppercase;
+}
+
+/* Hover affordance on FAQ video cards */
+.faq-vid { cursor: pointer; text-decoration: none; color: inherit; transition: transform 0.18s ease, border-color 0.18s ease; }
+.faq-vid:hover { transform: translateY(-2px); border-color: var(--line-brand); }
+.faq-vid:hover .faq-vid-thumb .play-btn { transform: scale(1.06); }
+.faq-vid-thumb .play-btn { transition: transform 0.18s ease; }
+
+/* ============================================================
+   FAQ VIDEO MODAL — opens when a card is clicked
+   ============================================================ */
+.vidmodal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(16px, 4vw, 48px);
+}
+.vidmodal.is-open { display: flex; }
+.vidmodal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(8, 4, 12, 0.78);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+.vidmodal-card {
+  position: relative;
+  width: 100%;
+  max-width: 960px;
+  background: var(--bg-elev);
+  border: 1px solid var(--line);
+  border-radius: var(--r-xl);
+  padding: clamp(16px, 2vw, 24px);
+  box-shadow: 0 40px 120px -20px rgba(0, 0, 0, 0.7);
+}
+.vidmodal-close {
+  position: absolute;
+  top: -14px;
+  right: -14px;
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--bg-elev);
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 8px 24px -6px rgba(0, 0, 0, 0.6);
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+.vidmodal-close:hover { transform: scale(1.06); border-color: var(--line-brand); }
+.vidmodal-close svg { width: 16px; height: 16px; }
+.vidmodal-title {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  color: var(--text);
+  padding: 4px 4px 14px 4px;
+  text-align: center;
+}
+.vidmodal-title:empty { display: none; }
+.vidmodal-frame {
+  aspect-ratio: 16/9;
+  background: #000;
+  border-radius: var(--r-lg);
+  overflow: hidden;
+}
+.vidmodal-frame video {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+  background: #000;
+}
+@media (max-width: 640px) {
+  .vidmodal { padding: 12px; }
+  .vidmodal-close { top: 8px; right: 8px; width: 36px; height: 36px; }
+  .vidmodal-title { font-size: 14px; padding-bottom: 10px; }
+}
+
+/* Founder message section */
+.founder-section {
+  background: var(--bg-elev);
+  border: 1px solid var(--line);
+  border-radius: var(--r-xl);
+  padding: clamp(32px, 4vw, 64px);
+  max-width: 960px;
+  margin: 0 auto;
+}
+.founder-head {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 28px;
+}
+.founder-head .small-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: var(--brand-glow);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.founder-head h2 {
+  margin: 0;
+  font-size: clamp(28px, 3vw, 40px);
+  letter-spacing: -0.02em;
+}
+.founder-head .role {
+  font-size: 14px;
+  color: var(--text-mute);
+  margin-top: 4px;
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.04em;
+}
+.founder-body p {
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--text);
+  margin: 0 0 18px 0;
+}
+.founder-body p:last-child { margin-bottom: 0; }
+.founder-sig {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px dashed var(--line);
+  font-size: 16px;
+  color: var(--text-mute);
+}
+.founder-sig strong { color: var(--text); font-weight: 600; }
