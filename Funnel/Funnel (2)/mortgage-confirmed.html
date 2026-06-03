@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>You're booked — Sore Thumb Agency</title>
+  <meta name="description" content="Your diagnostic call is confirmed. Here's what to do next." />
+  <meta name="robots" content="noindex" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="thank-you.css" />
+</head>
+<body>
+  <div class="atmosphere"></div>
+  <div class="grain"></div>
+
+  <!-- Minimal top bar -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div style="display:flex;align-items:center;gap:14px">
+        <img src="assets/logo.png" alt="Sore Thumb Agency" class="topbar-logo" />
+      </div>
+      <div class="topbar-meta">
+        <span class="topbar-meta-dot"></span>
+        <span>BOOKING CONFIRMED</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ CONFIRMATION HERO ============ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head center">
+        <span class="eyebrow"><span class="dot"></span>BOOKING CONFIRMED · BUILT TO SCALE&trade;</span>
+        <h1 class="text-grad">You're booked.</h1>
+        <p class="lede">Before we jump on together, two quick things to make our time count.</p>
+      </div>
+
+      <div class="confirm-card">
+        <ol class="confirm-steps">
+          <li>
+            <div class="step-num">01</div>
+            <div class="step-body">
+              <h3>Accept the Calendly invite</h3>
+              <p>Check your email and accept the invitation from <strong>Calendly</strong>. This locks the time into your calendar — without acceptance, the slot can be released.</p>
+            </div>
+          </li>
+          <li>
+            <div class="step-num">02</div>
+            <div class="step-body">
+              <h3>Watch this 2-minute prep video</h3>
+              <p>It covers exactly what to expect on our call, what to have ready, and how to get the most out of our time together. Brian references this video on every call — watching now means we skip the basics and dive straight into your strategy.</p>
+            </div>
+          </li>
+        </ol>
+
+        <div class="video-frame">
+          <!-- TODO: add the 2-min prep video URL as src="..." below -->
+          <video
+            class="video-el is-playing"
+            controls
+            playsinline
+            preload="none"
+            poster="assets/video-thumbnail.png">
+          </video>
+        </div>
+
+        <div class="confirm-callout">
+          <span>&#9888;&#65039;</span>
+          <div><strong>Heads up:</strong> Brian references what's in this video during our calls. Watching it now means we can skip the basics and dive straight into getting you results.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CASE STUDIES — MORTGAGE BROKERAGES ============ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head center">
+        <span class="eyebrow"><span class="dot"></span>BUILT TO SCALE&trade; · IN ACTION</span>
+        <h2 class="text-grad">While you wait — here's what's possible.</h2>
+        <p class="lede">Real mortgage brokerages running the Built to Scale&trade; system right now. Not vanity numbers. Real receipts.</p>
+      </div>
+
+      <div class="case-grid">
+        <!-- Feature card: 146 leads at $4.72 -->
+        <div class="case-card case-card--feature">
+          <div class="case-label">DECEMBER · MORTGAGE BROKERAGE</div>
+          <div class="case-num">146</div>
+          <div class="case-title">Exclusive mortgage leads in 30 days at <strong>$4.72</strong> per lead.</div>
+          <div class="case-meta">
+            <span><strong>+50.5%</strong> volume MoM</span>
+            <span><strong>&#8722;41.4%</strong> CPL</span>
+            <span><strong>$689.70</strong> total ad spend</span>
+          </div>
+        </div>
+
+        <!-- $1.14M loan closed -->
+        <div class="case-card">
+          <div class="case-label">3-MONTH OUTBOUND</div>
+          <div class="case-num">$1.14M</div>
+          <div class="case-title">Loan closed without manual prospecting.</div>
+          <div class="case-meta">
+            <span>March &mdash; May</span>
+            <span>Outbound machine</span>
+          </div>
+        </div>
+
+        <!-- $60K commission added in 57 days -->
+        <div class="case-card">
+          <div class="case-label">KENNY · FIRST 57 DAYS</div>
+          <div class="case-num">$60K</div>
+          <div class="case-title">In commission added since plugging into Built to Scale&trade;.</div>
+          <div class="case-meta">
+            <span><strong>+87.5%</strong> lead volume</span>
+            <span><strong>&#8722;64.2%</strong> CPL</span>
+            <span><strong>$8.11</strong> CPL</span>
+          </div>
+        </div>
+
+        <!-- Andrew first closing -->
+        <div class="case-card">
+          <div class="case-label">ANDREW · FIRST CLOSING</div>
+          <div class="case-num">$13K</div>
+          <div class="case-title">Commission from <strong>$750</strong> in ad spend.</div>
+          <div class="case-meta">
+            <span>Strategy &mdash; Execution</span>
+            <span>Built to Scale&trade; system</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOUNDER MESSAGE ============ -->
+  <section class="section">
+    <div class="container">
+      <div class="founder-section">
+        <div class="founder-head">
+          <div class="small-eyebrow">A message from</div>
+          <h2 class="text-grad">Brian O'Neill</h2>
+          <div class="role">FOUNDER &middot; SORE THUMB AGENCY</div>
+        </div>
+        <div class="founder-body">
+          <p>As a trained architect, we learn that every structure needs three things: a solid foundation, integrated systems, and the ability to handle growth without collapse.</p>
+          <p>When the firm I worked for went bankrupt, I realized businesses need the same thing — most just build campaigns instead of infrastructure.</p>
+          <p>I had to pick up a full-time job in a donut shop in Central London just to make ends meet — and so it could also fuel my journey into entrepreneurship. That struggle forced me to figure it all out and stand out amongst the crowd.</p>
+          <p>Now I apply architectural principles to mortgage brokerage growth — engineering systems that scale predictably and sustainably. From then to today, we follow one value at Sore Thumb: <strong>Stand out like one.</strong></p>
+          <p>With this embodied into our whole team and culture, we spread this mindset into your brokerage. We demand more from ourselves each and every day, which will inevitably push your brand in the right direction. You'll feel and embrace this from day one — no matter how we're serving you.</p>
+          <p>So my message to you is simple: it's my duty to make you stand out like a Sore Thumb. It's what we do. I would be forever grateful for us to cross paths through this journey and hopefully form a bond within a partnership, no matter how big or small.</p>
+          <p>Hope to speak soon. Until then&hellip;</p>
+        </div>
+        <div class="founder-sig">
+          <strong>Brian O'Neill</strong> &middot; Founder, Sore Thumb Agency
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <img src="assets/logo.png" alt="Sore Thumb Agency" />
+    <div class="small">&copy; 2026 Sore Thumb Agency. All rights reserved.</div>
+    <div class="small">We install the infrastructure your brokerage should've had from day one.</div>
+  </footer>
+</body>
+</html>
