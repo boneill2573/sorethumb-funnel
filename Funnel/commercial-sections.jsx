@@ -73,11 +73,11 @@ function Hero({ onApply, variant }) {
 
           {variant === 'install' &&
           <h1>
-              <span className="text-grad">We install your agency's</span>
+              <span className="text-grad">The commercial acquisition system</span>
               <br />
-              <span className="accent">commercial acquisition system.</span>
+              <span className="accent">that makes you the agency to beat.</span>
               <br />
-              <span className="text-grad" style={{ fontSize: '0.6em', fontWeight: 800 }}>In 7 days. Owned forever.</span>
+              <span className="text-grad" style={{ fontSize: '0.5em', fontWeight: 800 }}>Exclusive inbound, automated nurture, qualified pipeline — engineered, installed in 7 days, owned forever. One agency per territory.</span>
             </h1>
           }
 
@@ -355,7 +355,7 @@ function VideoBreakdown({ onApply }) {
             ref={videoRef}
             className="video-el"
             src="https://assets.cdn.filesafe.space/VeS7pDhDmkRYLbsp3wjM/media/687bc265da28cf6eca7861cf.mp4"
-            poster="assets/video-thumbnail.png"
+            poster="assets/video-breakdown-thumb.png"
             controls={playing}
             playsInline
             preload="metadata"

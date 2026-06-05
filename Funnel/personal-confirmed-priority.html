@@ -4,6 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="facebook-domain-verification" content="o62zpxew1zwcxkfqk0qm06uhrvay4j" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/favicon-512.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
   <title>You're booked — Sore Thumb Agency</title>
   <meta name="description" content="Your diagnostic call is confirmed. Here's what to do next." />
   <meta name="robots" content="noindex" />
@@ -28,18 +31,19 @@
     fbq('init', '1532998407814474');
     fbq('track', 'PageView');
 
-    // Unique event ID is reused server-side via CAPI to deduplicate.
+    // Unique event ID — reused server-side via CAPI to deduplicate.
     window.__metaEventId = 'personal_priority_' + Date.now() + '_' + Math.random().toString(36).slice(2);
 
-    fbq('track', 'Schedule',
-      { content_name: 'Personal Priority Booking', currency: 'USD', value: 1 },
-      { eventID: window.__metaEventId });
-
+    // ── UNIVERSAL (fires on BOTH standard & priority pages) = ALL leads / ALL booked calls.
     fbq('track', 'Lead',
-      { content_name: 'Personal Priority Booking', currency: 'USD', value: 1 },
+      { content_name: 'Personal Booking — Priority', currency: 'USD', value: 1 },
+      { eventID: window.__metaEventId });
+    fbq('track', 'Schedule',
+      { content_name: 'Personal Booking — Priority', currency: 'USD', value: 1 },
       { eventID: window.__metaEventId });
 
-    fbq('trackCustom', 'PersonalBooking',
+    // ── TIER SPLIT — this is the PRIORITY (high-ticket) cohort. OPTIMIZE ADS FOR THIS.
+    fbq('trackCustom', 'PersonalPriorityBooking',
       { currency: 'USD', value: 1 },
       { eventID: window.__metaEventId });
   </script>

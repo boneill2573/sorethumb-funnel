@@ -69,7 +69,17 @@ function Hero({ onApply, variant }) {
     <section className="hero">
       <div className="hero-grid">
         <div className="hero-head">
-          <span className="eyebrow"><span className="dot" />FOR ESTABLISHED MORTGAGE BROKERAGES · $500K+ COMMISSION REVENUE</span>
+          <span className="eyebrow"><span className="dot" />BY APPLICATION · ONE BROKERAGE PER TERRITORY</span>
+
+          {variant === 'beat' &&
+          <h1>
+              <span className="text-grad">The mortgage acquisition system</span>
+              <br />
+              <span className="accent">that makes you the brokerage to beat.</span>
+              <br />
+              <span className="text-grad" style={{ fontSize: '0.5em', fontWeight: 800 }}>Exclusive inbound, automated nurture, qualified pipeline — engineered, installed in 7 days, owned forever. One brokerage per territory.</span>
+            </h1>
+          }
 
           {variant === 'leads' &&
           <h1>
@@ -102,7 +112,7 @@ function Hero({ onApply, variant }) {
           }
 
           <p className="lede">
-            We install a complete AI-driven acquisition system inside your brokerage. No shared leads. No generic creatives. No loan officers wasting hours on manual follow-up. Just qualified purchase and refi appointments hitting your calendar — predictably, exclusively, every week.
+            We don't sell leads — we engineer and install a complete client-acquisition system inside your brokerage. Exclusive inbound, automated nurture, and follow-up that delivers qualified purchase and refi opportunities, every week. Installed in 7 days. Owned forever. We take one brokerage per territory — once yours is claimed, your competitors are locked out.
           </p>
 
           <div className="hero-actions">
@@ -119,7 +129,7 @@ function Hero({ onApply, variant }) {
           </div>
 
           <div className="hero-trust">
-            <div className="hero-trust-item"><Icon.Shield />$500K+ in commission revenue</div>
+            <div className="hero-trust-item"><Icon.Shield />Established brokerage book</div>
             <div className="hero-trust-item"><Icon.Bolt />Launched in 7 days</div>
             <div className="hero-trust-item"><Icon.Target />One brokerage per territory</div>
           </div>
@@ -325,9 +335,9 @@ function VideoBreakdown({ onApply }) {
     <section className="section section--tight" id="video">
       <div className="container">
         <div className="section-head center">
-          <span className="eyebrow"><span className="dot" />FULL BREAKDOWN · 4 MIN</span>
-          <h2 className="text-grad">Watch: 146 leads at $4.72 each, in 30 days.</h2>
-          <p className="lede">Brian walks through the exact 9-stage system we installed for a mortgage brokerage — what we built, what changed, and what happened to their cost per lead.</p>
+          <span className="eyebrow"><span className="dot" />WATCH THIS FIRST</span>
+          <h2 className="text-grad">Why the brokerages winning right now stopped buying leads.</h2>
+          <p className="lede">Brian breaks down the shift behind brokerages that own their acquisition instead of renting it — why the old way quietly caps your growth, and what changes the moment you own the system.</p>
         </div>
 
         <div className={"video-frame" + (playing ? " is-playing" : "")} onClick={playing ? undefined : handlePlay}>
@@ -335,7 +345,7 @@ function VideoBreakdown({ onApply }) {
             ref={videoRef}
             className="video-el"
             src="https://assets.cdn.filesafe.space/VeS7pDhDmkRYLbsp3wjM/media/687bc265da28cf6eca7861cf.mp4"
-            poster="assets/video-thumbnail.png"
+            poster="assets/video-breakdown-thumb.png"
             controls={playing}
             playsInline
             preload="metadata"
@@ -346,8 +356,8 @@ function VideoBreakdown({ onApply }) {
                 <Icon.Play />
               </div>
               <div className="video-meta">
-                <div className="vm-title">How we cut CPL by 41% and 2x'd lead volume in one month.</div>
-                <div className="vm-time">04:12</div>
+                <div className="vm-title">The system behind brokerages that never chase clients again.</div>
+                <div className="vm-time">Watch now</div>
               </div>
             </>
           )}
@@ -357,19 +367,19 @@ function VideoBreakdown({ onApply }) {
           <div className="video-bullet">
             <div>
               <div className="vb-num">01 / WATCH FOR</div>
-              <div className="vb-body">The exact 9-stage system, end-to-end</div>
+              <div className="vb-body">Why renting leads quietly caps your growth</div>
             </div>
           </div>
           <div className="video-bullet">
             <div>
               <div className="vb-num">02 / WATCH FOR</div>
-              <div className="vb-body">How we cut CPL by 41.4% while doubling volume</div>
+              <div className="vb-body">What it actually means to own your pipeline</div>
             </div>
           </div>
           <div className="video-bullet">
             <div>
               <div className="vb-num">03 / WATCH FOR</div>
-              <div className="vb-body">Why this works for $500K+ commission-revenue brokerages (but not startups)</div>
+              <div className="vb-body">The shift that makes you the brokerage clients come to</div>
             </div>
           </div>
         </div>

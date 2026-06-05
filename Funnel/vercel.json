@@ -13,6 +13,8 @@
     { "source": "/commercial-confirmed-priority", "destination": "/commercial-confirmed-priority.html" },
     { "source": "/personal-application", "destination": "/personal-application.html" },
     { "source": "/personal-confirmed", "destination": "/personal-confirmed.html" },
-    { "source": "/personal-confirmed-priority", "destination": "/personal-confirmed-priority.html" }
+    { "source": "/personal-confirmed-priority", "destination": "/personal-confirmed-priority.html" },
+    { "source": "/mortgage-confirmed", "destination": "/mortgage-confirmed.html" },
+    { "source": "/mortgage-confirmed-priority", "destination": "/mortgage-confirmed-priority.html" }
   ]
 }

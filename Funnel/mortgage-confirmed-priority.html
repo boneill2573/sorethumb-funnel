@@ -3,6 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="facebook-domain-verification" content="o62zpxew1zwcxkfqk0qm06uhrvay4j" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/favicon-512.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
   <title>You're booked — Sore Thumb Agency</title>
   <meta name="description" content="Your diagnostic call is confirmed. Here's what to do next." />
   <meta name="robots" content="noindex" />
@@ -14,40 +18,37 @@
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="thank-you.css" />
 
-  <!-- ============ CONVERSION TRACKING ============
-       Swap YOUR_PIXEL_ID and YOUR_GA4_ID for real values before going live.
-       This page = a qualified booking, so we fire conversion events on load. -->
-
-  <!-- Meta Pixel — placeholder -->
-  <!--
+  <!-- ============ META PIXEL (DATASET 1532998407814474) ============
+       Priority (high-ticket) mortgage booking. Fires universal Lead + Schedule
+       (= all booked calls) plus the tier-specific MortgagePriorityBooking custom
+       event — OPTIMIZE ADS FOR MortgagePriorityBooking. -->
   <script>
     !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
     n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
     n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
     t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
     document,'script','https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', 'YOUR_PIXEL_ID');
+    fbq('init', '1532998407814474');
     fbq('track', 'PageView');
-    fbq('track', 'Schedule');  // standard "booked a call" event
-    fbq('trackCustom', 'PriorityBooking');  // custom event for higher-LTV cohort
-  </script>
-  -->
 
-  <!-- GA4 — placeholder -->
-  <!--
-  <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_GA4_ID"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'YOUR_GA4_ID');
-    gtag('event', 'generate_lead', {
-      currency: 'USD',
-      value: 1,
-      lead_quality: 'priority'
-    });
+    window.__metaEventId = 'mortgage_priority_' + Date.now() + '_' + Math.random().toString(36).slice(2);
+
+    // ── UNIVERSAL (fires on BOTH standard & priority pages) = ALL leads / ALL booked calls.
+    fbq('track', 'Lead',
+      { content_name: 'Mortgage Booking — Priority', currency: 'USD', value: 1 },
+      { eventID: window.__metaEventId });
+    fbq('track', 'Schedule',
+      { content_name: 'Mortgage Booking — Priority', currency: 'USD', value: 1 },
+      { eventID: window.__metaEventId });
+
+    // ── TIER SPLIT — PRIORITY (high-ticket) cohort. OPTIMIZE ADS FOR THIS.
+    fbq('trackCustom', 'MortgagePriorityBooking',
+      { currency: 'USD', value: 1 },
+      { eventID: window.__metaEventId });
   </script>
-  -->
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1532998407814474&ev=PageView&noscript=1" alt="" /></noscript>
+  <!-- End Meta Pixel -->
 </head>
 <body>
   <div class="atmosphere"></div>
@@ -101,13 +102,13 @@
         </ol>
 
         <div class="video-frame">
-          <!-- TODO: add the 2-min prep video URL as src="..." below -->
           <video
             class="video-el is-playing"
             controls
             playsinline
             preload="none"
-            poster="assets/video-thumbnail.png">
+            poster="assets/video-thumbnail.png"
+            src="https://assets.cdn.filesafe.space/VeS7pDhDmkRYLbsp3wjM/media/6966829c9a690c161fedb9a9.mp4">
           </video>
         </div>
 
@@ -164,10 +165,9 @@
         <p class="lede">The most common things brokerages ask before jumping on a call. 60 seconds each.</p>
       </div>
 
-      <!-- TODO: replace each <a href="#"> with the FAQ video URL or wire to a modal/lightbox -->
       <div class="faq-vid-grid">
-        <a class="faq-vid" href="#">
-          <div class="faq-vid-thumb">
+        <a class="faq-vid" href="#" data-video="https://assets.cdn.filesafe.space/VeS7pDhDmkRYLbsp3wjM/media/696680dce4b3055556239201.mp4" data-poster="assets/faq-first-7-days.png">
+          <div class="faq-vid-thumb has-thumb" style="background-image: url('assets/faq-first-7-days.png')">
             <div class="play-btn">
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
             </div>
@@ -177,8 +177,8 @@
             <h4>What happens in the first 7 days after I sign up?</h4>
           </div>
         </a>
-        <a class="faq-vid" href="#">
-          <div class="faq-vid-thumb">
+        <a class="faq-vid" href="#" data-video="https://assets.cdn.filesafe.space/VeS7pDhDmkRYLbsp3wjM/media/696680dcb9e85c6863f33992.mp4" data-poster="assets/faq-exclusive-leads.png">
+          <div class="faq-vid-thumb has-thumb" style="background-image: url('assets/faq-exclusive-leads.png')">
             <div class="play-btn">
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
             </div>
@@ -188,8 +188,8 @@
             <h4>How do you guarantee exclusive leads for my brokerage?</h4>
           </div>
         </a>
-        <a class="faq-vid" href="#">
-          <div class="faq-vid-thumb">
+        <a class="faq-vid" href="#" data-video="https://assets.cdn.filesafe.space/VeS7pDhDmkRYLbsp3wjM/media/696680dce4b30516652391fd.mp4" data-poster="assets/faq-how-long-results.png">
+          <div class="faq-vid-thumb has-thumb" style="background-image: url('assets/faq-how-long-results.png')">
             <div class="play-btn">
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
             </div>
@@ -199,8 +199,8 @@
             <h4>How long does it take to see results?</h4>
           </div>
         </a>
-        <a class="faq-vid" href="#">
-          <div class="faq-vid-thumb">
+        <a class="faq-vid" href="#" data-video="https://assets.cdn.filesafe.space/VeS7pDhDmkRYLbsp3wjM/media/696680dc9a690c642ded23fe.mp4" data-poster="assets/faq-qualified-leads.png">
+          <div class="faq-vid-thumb has-thumb" style="background-image: url('assets/faq-qualified-leads.png')">
             <div class="play-btn">
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
             </div>
@@ -210,8 +210,8 @@
             <h4>How do you ensure qualified leads?</h4>
           </div>
         </a>
-        <a class="faq-vid" href="#">
-          <div class="faq-vid-thumb">
+        <a class="faq-vid" href="#" data-video="https://assets.cdn.filesafe.space/VeS7pDhDmkRYLbsp3wjM/media/696680dc0beb54c9a8eaa951.mp4" data-poster="assets/faq-roi.png">
+          <div class="faq-vid-thumb has-thumb" style="background-image: url('assets/faq-roi.png')">
             <div class="play-btn">
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
             </div>
@@ -221,8 +221,8 @@
             <h4>What kind of return can I realistically expect?</h4>
           </div>
         </a>
-        <a class="faq-vid" href="#">
-          <div class="faq-vid-thumb">
+        <a class="faq-vid" href="#" data-video="https://assets.cdn.filesafe.space/VeS7pDhDmkRYLbsp3wjM/media/696680dc0475d495d64e9217.mp4" data-poster="assets/faq-support.png">
+          <div class="faq-vid-thumb has-thumb" style="background-image: url('assets/faq-support.png')">
             <div class="play-btn">
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
             </div>
@@ -344,5 +344,73 @@
     <div class="small">&copy; 2026 Sore Thumb Agency. All rights reserved.</div>
     <div class="small">We install the infrastructure your brokerage should've had from day one.</div>
   </footer>
+  <!-- ============ FAQ VIDEO MODAL ============ -->
+  <div class="vidmodal" id="vidmodal" aria-hidden="true" role="dialog" aria-label="FAQ video player">
+    <div class="vidmodal-backdrop" data-vm-close></div>
+    <div class="vidmodal-card">
+      <button class="vidmodal-close" type="button" data-vm-close aria-label="Close video">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+      <div class="vidmodal-title" id="vidmodal-title"></div>
+      <div class="vidmodal-frame">
+        <video id="vidmodal-video" controls playsinline preload="metadata"></video>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var modal = document.getElementById('vidmodal');
+      var video = document.getElementById('vidmodal-video');
+      var titleEl = document.getElementById('vidmodal-title');
+      if (!modal || !video) return;
+
+      function open(url, title, poster) {
+        if (!url) return;
+        video.src = url;
+        if (poster) video.poster = poster; else video.removeAttribute('poster');
+        titleEl.textContent = title || '';
+        modal.classList.add('is-open');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        // Defer play so the src has time to attach
+        requestAnimationFrame(function () {
+          var p = video.play();
+          if (p && typeof p.catch === 'function') p.catch(function(){});
+        });
+      }
+
+      function close() {
+        modal.classList.remove('is-open');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        try { video.pause(); } catch (e) {}
+        video.removeAttribute('src');
+        video.load();
+      }
+
+      // Wire FAQ cards
+      document.querySelectorAll('.faq-vid[data-video]').forEach(function (card) {
+        card.addEventListener('click', function (e) {
+          e.preventDefault();
+          var url = card.getAttribute('data-video');
+          var poster = card.getAttribute('data-poster') || '';
+          var titleNode = card.querySelector('h4');
+          var title = titleNode ? titleNode.textContent.trim() : '';
+          open(url, title, poster);
+        });
+      });
+
+      // Close handlers
+      modal.addEventListener('click', function (e) {
+        if (e.target.hasAttribute('data-vm-close') || e.target.closest('[data-vm-close]')) close();
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && modal.classList.contains('is-open')) close();
+      });
+    })();
+  </script>
+
+
 </body>
 </html>

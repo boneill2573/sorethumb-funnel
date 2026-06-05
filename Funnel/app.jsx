@@ -1,17 +1,18 @@
 const { useState: useStateA, useEffect: useEffectA } = React;
 
 const DEFAULTS = /*EDITMODE-BEGIN*/{
-  "heroVariant": "leads",
+  "heroVariant": "beat",
   "spotsLeft": 2,
   "showScarcity": true,
   "autoSpots": true
 }/*EDITMODE-END*/;
 
-// Auto-decrement through the month: start at 6 on day 1, lose one slot
-// every ~5 days, floor at 1. Resets on the 1st of each month.
+// Auto-decrement through the month: start at 5 (out of 6) on day 1, lose one
+// slot every ~6 days, floor at 1. Resets on the 1st of each month.
+// Max shown is 5 of 6 — never fully open (6 of 6).
 function computeSpots() {
   const day = new Date().getDate(); // 1..31
-  return Math.max(1, 6 - Math.floor((day - 1) / 5));
+  return Math.max(1, 5 - Math.floor((day - 1) / 6));
 }
 
 function App() {
@@ -63,6 +64,7 @@ function App() {
             label="Headline angle"
             value={t.heroVariant}
             options={[
+              { label: 'Brokerage to beat (system-led)', value: 'beat' },
               { label: '100 leads in 90 days', value: 'leads' },
               { label: '17–48 mortgage leads / week', value: 'system' },
               { label: 'Stop renting (hybrid)', value: 'hybrid' },
@@ -74,7 +76,7 @@ function App() {
           <TweakToggle label="Show scarcity bar" value={t.showScarcity} onChange={(v) => setTweak('showScarcity', v)} />
           <TweakToggle label="Auto-count down through month" value={t.autoSpots} onChange={(v) => setTweak('autoSpots', v)} />
           {!t.autoSpots && (
-            <TweakSlider label="Spots remaining (manual)" value={t.spotsLeft} min={1} max={6} step={1} onChange={(v) => setTweak('spotsLeft', v)} />
+            <TweakSlider label="Spots remaining (manual)" value={t.spotsLeft} min={1} max={5} step={1} onChange={(v) => setTweak('spotsLeft', v)} />
           )}
         </TweakSection>
       </TweaksPanel>

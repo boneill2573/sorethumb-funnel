@@ -4,6 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="facebook-domain-verification" content="o62zpxew1zwcxkfqk0qm06uhrvay4j" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/favicon-512.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
   <title>You're booked — Sore Thumb Agency</title>
   <meta name="description" content="Your diagnostic call is confirmed. Here's what to do next." />
   <meta name="robots" content="noindex" />
@@ -27,10 +30,20 @@
     fbq('init', '1532998407814474');
     fbq('track', 'PageView');
 
-    // Standard booking. eventID is reused server-side via CAPI to deduplicate.
-    window.__metaEventId = 'schedule_' + Date.now() + '_' + Math.random().toString(36).slice(2);
+    // Unique event ID — reused server-side via CAPI to deduplicate.
+    window.__metaEventId = 'commercial_standard_' + Date.now() + '_' + Math.random().toString(36).slice(2);
+
+    // ── UNIVERSAL (fires on BOTH standard & priority pages) = ALL leads / ALL booked calls.
+    fbq('track', 'Lead',
+      { content_name: 'Commercial Booking — Standard', currency: 'USD', value: 1 },
+      { eventID: window.__metaEventId });
     fbq('track', 'Schedule',
-      { content_name: 'Standard Booking', currency: 'USD', value: 1 },
+      { content_name: 'Commercial Booking — Standard', currency: 'USD', value: 1 },
+      { eventID: window.__metaEventId });
+
+    // ── TIER SPLIT — this is the STANDARD (lower-ticket) cohort.
+    fbq('trackCustom', 'CommercialStandardBooking',
+      { currency: 'USD', value: 1 },
       { eventID: window.__metaEventId });
   </script>
   <noscript><img height="1" width="1" style="display:none"
